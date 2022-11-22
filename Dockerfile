@@ -29,3 +29,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
+
+ENTRYPOINT ["dumb-init", "--"]
+CMD ["python3", "-um", "discord_bot.main"]
