@@ -10,7 +10,9 @@ from bot.plugins.youtube_playlist_search import _msg
 from discord.ext import commands
 
 
-client = commands.Bot(command_prefix='!')
+intents = discord.Intents.default()
+intents.message_content = True
+client = commands.Bot(command_prefix='!', intents=intents)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
