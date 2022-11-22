@@ -11,7 +11,7 @@ from discord.ext import commands
 
 
 client = commands.Bot(command_prefix='!')
-token = os.getenv('DISCORD_BOT_TOKEN')
+token = os.environ['DISCORD_BOT_TOKEN']
 
 
 @client.event
@@ -36,7 +36,7 @@ async def whoami(ctx):
 @client.command(name='explains')
 async def explains(ctx):
     # config for heroku
-    config = Config(**json.loads(os.getenv('CONFIG')))
+    config = Config(**json.loads(os.environ['CONFIG']))
 
     # config for local
     # with open('config.json') as f:
@@ -80,7 +80,7 @@ async def explains(ctx):
 @client.command(name='faq')
 async def faq(ctx):
     # config for heroku
-    config = Config(**json.loads(os.getenv('CONFIG')))
+    config = Config(**json.loads(os.environ['CONFIG']))
 
     # config for local
     # with open('config.json') as f:
@@ -107,7 +107,7 @@ async def faq(ctx):
 @client.command(name='puzzles')
 async def puzzles(ctx):
     # config for heroku
-    config = Config(**json.loads(os.getenv('CONFIG')))
+    config = Config(**json.loads(os.environ['CONFIG']))
 
     # config for local
     # with open('config.json') as f:
