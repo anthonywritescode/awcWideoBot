@@ -13,6 +13,8 @@ jobs:
       IMG_VERSIONED: ghcr.io/anthonywritescode/awcwideobot:${{ matrix.arch }}-${{ github.sha }}
     steps:
     - uses: actions/checkout@v3
+      with:
+        submodules: true
     - run: docker run --rm --privileged tonistiigi/binfmt --install arm64
       if: matrix.arch == 'arm64'
     - name: build
