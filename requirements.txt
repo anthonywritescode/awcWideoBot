@@ -1,12 +1,12 @@
-aiohttp==3.7.4.post0
-async-timeout==3.0.1
+aiohttp==3.8.3
+async-timeout==4.0.2
 attrs==20.3.0
 chardet==4.0.0
-discord.py==1.6.0
+discord.py==2.1.0
 idna==3.1
-multidict==5.1.0
+multidict==6.0.2
 typing-extensions==3.7.4.3
-yarl==1.6.3
+yarl==1.8.1
 
 async-lru==1.0.3
 humanize==3.10.0
