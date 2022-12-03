@@ -1,7 +1,6 @@
 /__pycache__
 *.pyc
 *$py.class
-*.sh
 .env
 token
 config.json
