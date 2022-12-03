@@ -14,6 +14,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = commands.Bot(command_prefix='!', intents=intents)
 token = os.environ['DISCORD_BOT_TOKEN']
+config = Config(**json.loads(os.environ['DISCORD_BOT_CONFIG']))
 
 
 @client.event
@@ -37,9 +38,6 @@ async def whoami(ctx):
 
 @client.command(name='explains')
 async def explains(ctx):
-    # config for heroku
-    config = Config(**json.loads(os.environ['CONFIG']))
-
     # config for local
     # with open('config.json') as f:
     #   config = Config(**json.load(f))
@@ -81,9 +79,6 @@ async def explains(ctx):
 
 @client.command(name='faq')
 async def faq(ctx):
-    # config for heroku
-    config = Config(**json.loads(os.environ['CONFIG']))
-
     # config for local
     # with open('config.json') as f:
     #   config = Config(**json.loads(f))
@@ -108,9 +103,6 @@ async def faq(ctx):
 
 @client.command(name='puzzles')
 async def puzzles(ctx):
-    # config for heroku
-    config = Config(**json.loads(os.environ['CONFIG']))
-
     # config for local
     # with open('config.json') as f:
     #   config = Config(**json.loads(f))
