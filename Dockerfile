@@ -11,6 +11,8 @@ RUN : \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /src
+
 ENV \
     PATH=/venv/bin:$PATH \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
