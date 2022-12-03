@@ -1,6 +1,7 @@
 variable "oci_tenancy_ocid" { type = string }
 variable "discord_bot_config" { type = string }
 variable "discord_bot_token" { type = string }
+variable "discord_bot_ssh_public_key" { type = string }
 
 data "oci_identity_availability_domains" "oci" {
   compartment_id = var.oci_tenancy_ocid
@@ -155,7 +156,7 @@ resource "oci_core_instance" "wideo_bot" {
     subnet_id        = oci_core_subnet.wideo_bot.id
   }
   metadata = {
-    ssh_authorized_keys = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTOQGOr6sEmA1vL7POTauIq0vhHUVv/G1MpN0px1GC0a/NzdS7290s936yOP8HMw6L329iJMpkiUEJMgSnA/MhzWjMMm+9HoqtwN1o4Tih7aAZYPMVoUamvdpWT1eVXtCTViiQcd9oOkj1o1Jo+NX2oKyDzfPQYr3wmQ118DmQNc+S5QeYfdfbbO+RzThU2c98FfSefQVUSdwyUCh1M7kxWn7N9Z7/lwdzAQm5NA6OAmacAPUJ0+TDflhgGXmCqFsmNunyaXKDiL6sZ8mELEZEm23t2ND0HORGooHdT65gKZ+rbxk9Gct7zXE+HjPg5uzV2eXiaRW2uZHqVh5YkuuF anthony@anthony-VirtualBox"
+    ssh_authorized_keys = var.discord_bot_ssh_public_key,
     user_data = base64encode(
       replace(
         file("${path.module}/data/cloud-init.sh"),
