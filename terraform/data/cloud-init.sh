@@ -57,7 +57,7 @@ while true; do
         podman stop discord-bot
     fi
 
-    sleep 60
+    sleep 300
 done
 EOF
 
