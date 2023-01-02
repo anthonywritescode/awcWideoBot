@@ -83,6 +83,7 @@ resource "oci_core_subnet" "wideo_bot" {
   compartment_id = oci_identity_compartment.wideo_bot.id
   vcn_id         = oci_core_vcn.wideo_bot.id
   route_table_id = oci_core_route_table.wideo_bot.id
+  security_list_ids = [oci_core_security_list.wideo_bot.id]
 }
 
 resource "oci_core_security_list" "wideo_bot" {
