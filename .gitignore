@@ -1,6 +1,2 @@
-/__pycache__
-*.pyc
-*$py.class
 .env
-token
-config.json
+/target
