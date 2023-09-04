@@ -42,3 +42,7 @@ repos:
         entry: rustfmt --edition 2021
         language: rust
         types: [rust]
+-   repo: https://github.com/AleksaC/terraform-py
+    rev: v1.5.6
+    hooks:
+    -   id: tf-fmt
