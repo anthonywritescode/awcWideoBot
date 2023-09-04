@@ -87,7 +87,7 @@ data "aws_iam_policy_document" "awc_wideo_bot_deploy_assume" {
     condition {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:anthonywritescode/awcWideoBot"]
+      values   = ["repo:anthonywritescode/awcWideoBot:*"]
     }
   }
 }
