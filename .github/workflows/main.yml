@@ -1,0 +1,26 @@
+on:
+  pull_request:
+  push:
+    branches: [main, test-me-*]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+    - run: pip install cargo-lambda
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
+    - run: cargo lambda build --release --output-format zip
+    - uses: aws-actions/configure-aws-credentials@v3.0.1
+      with:
+        role-to-assume: 'arn:aws:iam::048899320783:role/awc_wideo_bot_deploy'
+        aws-region: us-east-1
+      if: github.event_name == 'push'
+    - run: |
+        aws lambda \
+          update-function-code --function-name awc_wideo_bot \
+          --zip fileb://target/lambda/awc-wideo-bot/bootstrap.zip
+      if: github.event_name == 'push'
