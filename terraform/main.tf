@@ -37,7 +37,7 @@ resource "aws_lambda_function" "awc_wideo_bot" {
   filename      = "${path.module}/data/placeholder_lambda.zip"
   role          = aws_iam_role.awc_wideo_bot.arn
   handler       = "bootstrap"
-  runtime       = "provided.al2"
+  runtime       = "provided.al2023"
   timeout       = 5
 
   environment {
