@@ -1,6 +1,6 @@
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
@@ -43,6 +43,6 @@ repos:
         language: rust
         types: [rust]
 -   repo: https://github.com/AleksaC/terraform-py
-    rev: v1.9.6
+    rev: v1.9.7
     hooks:
     -   id: tf-fmt
