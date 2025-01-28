@@ -43,6 +43,6 @@ repos:
         language: rust
         types: [rust]
 -   repo: https://github.com/AleksaC/terraform-py
-    rev: v1.10.4
+    rev: v1.10.5
     hooks:
     -   id: tf-fmt
