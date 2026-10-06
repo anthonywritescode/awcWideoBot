@@ -32,7 +32,7 @@ repos:
     hooks:
     -   id: flake8
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v2.3.1
+    rev: v2.4.0
     hooks:
     -   id: mypy
 -   repo: local
@@ -43,6 +43,6 @@ repos:
         language: rust
         types: [rust]
 -   repo: https://github.com/AleksaC/terraform-py
-    rev: v1.16.4
+    rev: v1.16.5
     hooks:
     -   id: tf-fmt
